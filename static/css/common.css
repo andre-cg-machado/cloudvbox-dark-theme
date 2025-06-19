@@ -1,0 +1,190 @@
+/* 
+ * cloudvBOX Dark Theme - CSS Base
+ * Cores e variáveis principais do tema
+ */
+
+:root {
+    /* Cores principais do cloudvBOX */
+    --cloudvbox-primary: #55FCFF;
+    --cloudvbox-primary-rgb: 85, 252, 255;
+    --cloudvbox-dark-bg: #012837;
+    --cloudvbox-dark-bg-rgb: 1, 40, 55;
+    
+    /* Cores de texto */
+    --cloudvbox-text-primary: #ffffff;
+    --cloudvbox-text-secondary: #d1d5db;
+    --cloudvbox-text-muted: #9ca3af;
+    
+    /* Cores de botões */
+    --cloudvbox-button-primary: #3b82f6;
+    --cloudvbox-button-primary-hover: #2563eb;
+    --cloudvbox-button-secondary: #374151;
+    --cloudvbox-button-secondary-hover: #4b5563;
+    
+    /* Cores de fundo */
+    --cloudvbox-bg-primary: #012837;
+    --cloudvbox-bg-secondary: #0f172a;
+    --cloudvbox-bg-tertiary: #1e293b;
+    --cloudvbox-bg-card: #1f2937;
+    
+    /* Cores de borda */
+    --cloudvbox-border-primary: #374151;
+    --cloudvbox-border-secondary: #4b5563;
+    --cloudvbox-border-accent: rgba(85, 252, 255, 0.3);
+    
+    /* Sombras */
+    --cloudvbox-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --cloudvbox-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --cloudvbox-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --cloudvbox-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Raios de borda */
+    --cloudvbox-radius-sm: 0.25rem;
+    --cloudvbox-radius-md: 0.375rem;
+    --cloudvbox-radius-lg: 0.5rem;
+    --cloudvbox-radius-xl: 0.75rem;
+    --cloudvbox-radius-2xl: 1rem;
+    
+    /* Transições */
+    --cloudvbox-transition: all 0.2s ease-in-out;
+    --cloudvbox-transition-fast: all 0.1s ease-in-out;
+    --cloudvbox-transition-slow: all 0.3s ease-in-out;
+}
+
+/* Utilitários de cores */
+.cloudvbox-text-primary { color: var(--cloudvbox-text-primary) !important; }
+.cloudvbox-text-secondary { color: var(--cloudvbox-text-secondary) !important; }
+.cloudvbox-text-muted { color: var(--cloudvbox-text-muted) !important; }
+.cloudvbox-text-accent { color: var(--cloudvbox-primary) !important; }
+
+.cloudvbox-bg-primary { background-color: var(--cloudvbox-bg-primary) !important; }
+.cloudvbox-bg-secondary { background-color: var(--cloudvbox-bg-secondary) !important; }
+.cloudvbox-bg-tertiary { background-color: var(--cloudvbox-bg-tertiary) !important; }
+.cloudvbox-bg-card { background-color: var(--cloudvbox-bg-card) !important; }
+
+.cloudvbox-border { border-color: var(--cloudvbox-border-primary) !important; }
+.cloudvbox-border-accent { border-color: var(--cloudvbox-border-accent) !important; }
+
+/* Logo cloudvBOX */
+.cloudvbox-logo {
+    height: 32px;
+    width: auto;
+    filter: brightness(1.1);
+    transition: var(--cloudvbox-transition);
+}
+
+.cloudvbox-logo:hover {
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(85, 252, 255, 0.3));
+}
+
+/* Botões estilo cloudvBOX */
+.cloudvbox-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: var(--cloudvbox-radius-md);
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    transition: var(--cloudvbox-transition);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cloudvbox-btn-primary {
+    background-color: var(--cloudvbox-button-primary);
+    color: var(--cloudvbox-text-primary);
+}
+
+.cloudvbox-btn-primary:hover {
+    background-color: var(--cloudvbox-button-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--cloudvbox-shadow-md);
+}
+
+.cloudvbox-btn-secondary {
+    background-color: var(--cloudvbox-button-secondary);
+    color: var(--cloudvbox-text-primary);
+}
+
+.cloudvbox-btn-secondary:hover {
+    background-color: var(--cloudvbox-button-secondary-hover);
+}
+
+.cloudvbox-btn-accent {
+    background-color: transparent;
+    color: var(--cloudvbox-primary);
+    border: 1px solid var(--cloudvbox-primary);
+}
+
+.cloudvbox-btn-accent:hover {
+    background-color: rgba(85, 252, 255, 0.1);
+    box-shadow: 0 0 12px rgba(85, 252, 255, 0.3);
+}
+
+/* Cards estilo cloudvBOX */
+.cloudvbox-card {
+    background-color: var(--cloudvbox-bg-card);
+    border-radius: var(--cloudvbox-radius-2xl);
+    padding: 1.5rem;
+    box-shadow: var(--cloudvbox-shadow-xl);
+    border: 1px solid var(--cloudvbox-border-primary);
+    transition: var(--cloudvbox-transition);
+}
+
+.cloudvbox-card:hover {
+    box-shadow: var(--cloudvbox-shadow-xl), 0 0 20px rgba(85, 252, 255, 0.1);
+    border-color: var(--cloudvbox-border-accent);
+}
+
+/* Inputs estilo cloudvBOX */
+.cloudvbox-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: var(--cloudvbox-radius-md);
+    border: 1px solid var(--cloudvbox-border-primary);
+    background-color: var(--cloudvbox-bg-tertiary);
+    color: var(--cloudvbox-text-primary);
+    font-size: 0.875rem;
+    transition: var(--cloudvbox-transition);
+}
+
+.cloudvbox-input:focus {
+    outline: none;
+    border-color: var(--cloudvbox-primary);
+    box-shadow: 0 0 0 3px rgba(85, 252, 255, 0.1);
+}
+
+.cloudvbox-input::placeholder {
+    color: var(--cloudvbox-text-muted);
+}
+
+/* Scrollbars personalizadas */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cloudvbox-bg-secondary);
+    border-radius: var(--cloudvbox-radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cloudvbox-border-secondary);
+    border-radius: var(--cloudvbox-radius-sm);
+    transition: var(--cloudvbox-transition);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cloudvbox-primary);
+}
+
+/* Seleção de texto */
+::selection {
+    background-color: rgba(85, 252, 255, 0.3);
+    color: var(--cloudvbox-text-primary);
+}
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>cloudvBOX Logout</title>
+    <link rel="stylesheet" href="{{ static_url('css/login.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ static_url('images/favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="logout-container" aria-label="Logout cloudvBOX">
+        <img src="{{ static_url('images/logo.png') }}" alt="Logo cloudvBOX" class="logo" width="120" height="120" loading="lazy">
+        <h2>Logout realizado</h2>
+        <p>Você saiu da sua sessão com segurança.<br>
+           Obrigado por usar o cloudvBOX!</p>
+        <a href="/login" class="logout-btn">Fazer login novamente</a>
+    </main>
+    <script src="{{ static_url('js/logout.js') }}"></script>
+</body>
+</html>

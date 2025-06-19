@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloudvbox-dark-theme"
+version = "0.0.1"
+description = "cloudvBOX Dark Theme for JupyterLab"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "cloudvBOX Team", email = "dev@cloudvbox.com"}
+]
+maintainers = [
+    {name = "cloudvBOX Team", email = "dev@cloudvbox.com"}
+]
+keywords = ["jupyter", "notebook", "jupyterlab", "theme", "dark", "cloudvbox"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: User Interfaces",
+    "Framework :: Jupyter",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "jupyter",
+    "notebook>=6.0.0",
+    "jupyterlab>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/cloudvbox/cloudvbox-dark-theme"
+Documentation = "https://github.com/cloudvbox/cloudvbox-dark-theme#readme"
+Repository = "https://github.com/cloudvbox/cloudvbox-dark-theme"
+"Bug Tracker" = "https://github.com/cloudvbox/cloudvbox-dark-theme/issues"
+
+[project.scripts]
+cloudvbox-theme-install = "cloudvbox_dark_theme.install:install_theme"
+cloudvbox-theme-uninstall = "cloudvbox_dark_theme.install:uninstall_theme"
+cloudvbox-theme = "cloudvbox_dark_theme.cli:main"
+
+[tool.setuptools]
+packages = ["cloudvbox_dark_theme"]
+
+[tool.setuptools.package-data]
+cloudvbox_dark_theme = [
+    "static/css/*.css",
+    "static/js/*.js", 
+    "static/images/*",
+    "templates/*",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+include = [
+    "cloudvbox_dark_theme/static/**",
+    "cloudvbox_dark_theme/templates/**"
+]

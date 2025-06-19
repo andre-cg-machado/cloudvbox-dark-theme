@@ -1,0 +1,488 @@
+/*
+ * cloudvBOX Dark Theme - JupyterLab
+ * Tema escuro profissional para JupyterLab
+ */
+
+@import url('common.css');
+
+/* === CONFIGURAÇÃO GLOBAL === */
+:root {
+    /* Sobrescrever variáveis do JupyterLab */
+    --jp-layout-color0: var(--cloudvbox-bg-primary);
+    --jp-layout-color1: var(--cloudvbox-bg-secondary);
+    --jp-layout-color2: var(--cloudvbox-bg-tertiary);
+    --jp-layout-color3: var(--cloudvbox-bg-card);
+    --jp-layout-color4: var(--cloudvbox-border-primary);
+    
+    --jp-brand-color0: var(--cloudvbox-primary);
+    --jp-brand-color1: rgba(85, 252, 255, 0.8);
+    --jp-brand-color2: rgba(85, 252, 255, 0.6);
+    --jp-brand-color3: rgba(85, 252, 255, 0.4);
+    
+    --jp-ui-font-color0: var(--cloudvbox-text-primary);
+    --jp-ui-font-color1: var(--cloudvbox-text-secondary);
+    --jp-ui-font-color2: var(--cloudvbox-text-muted);
+    --jp-ui-font-color3: var(--cloudvbox-text-muted);
+    
+    --jp-content-font-color0: var(--cloudvbox-text-primary);
+    --jp-content-font-color1: var(--cloudvbox-text-secondary);
+    --jp-content-font-color2: var(--cloudvbox-text-muted);
+    --jp-content-font-color3: var(--cloudvbox-text-muted);
+    
+    --jp-cell-editor-background: var(--cloudvbox-bg-secondary);
+    --jp-cell-editor-border-color: var(--cloudvbox-border-primary);
+    --jp-cell-editor-box-shadow: none;
+    --jp-cell-editor-active-background: var(--cloudvbox-bg-secondary);
+    --jp-cell-editor-active-border-color: var(--cloudvbox-primary);
+    
+    --jp-notebook-multiselected-color: rgba(85, 252, 255, 0.2);
+    
+    --jp-rendermime-error-background: rgba(255, 99, 71, 0.1);
+    --jp-rendermime-table-row-background: var(--cloudvbox-bg-secondary);
+    --jp-rendermime-table-row-hover-background: var(--cloudvbox-bg-tertiary);
+    
+    --jp-dialog-background: var(--cloudvbox-bg-card);
+    
+    --jp-input-box-shadow: none;
+    --jp-input-active-background: var(--cloudvbox-bg-secondary);
+    --jp-input-hover-background: var(--cloudvbox-bg-tertiary);
+    
+    --jp-toolbar-background: var(--cloudvbox-bg-secondary);
+    --jp-toolbar-border-color: var(--cloudvbox-border-primary);
+    --jp-toolbar-micro-height: 8px;
+    --jp-toolbar-button-height: 28px;
+    
+    --jp-statusbar-background: var(--cloudvbox-bg-secondary);
+    
+    --jp-scrollbar-background-color: var(--cloudvbox-bg-secondary);
+    --jp-scrollbar-thumb-color: var(--cloudvbox-border-secondary);
+    --jp-scrollbar-thumb-margin: 3.5px;
+    --jp-scrollbar-thumb-radius: 9px;
+    
+    --jp-shadow-base-lightness: 0;
+    --jp-shadow-umbra-color: rgba(0, 0, 0, 0.2);
+    --jp-shadow-penumbra-color: rgba(0, 0, 0, 0.14);
+    --jp-shadow-ambient-color: rgba(0, 0, 0, 0.12);
+    
+    --jp-border-radius: var(--cloudvbox-radius-md);
+    
+    --jp-code-font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    --jp-code-font-size: 14px;
+    --jp-code-line-height: 1.5;
+    
+    --jp-ui-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* === ÁREA PRINCIPAL === */
+#jp-main-dock-panel {
+    background-color: var(--cloudvbox-bg-primary) !important;
+}
+
+.jp-LabShell {
+    background-color: var(--cloudvbox-bg-primary) !important;
+}
+
+/* === HEADER COM LOGO === */
+#jp-top-panel {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border-bottom: 1px solid var(--cloudvbox-border-primary) !important;
+    box-shadow: var(--cloudvbox-shadow-md) !important;
+}
+
+/* Adicionar logo cloudvBOX */
+#jp-top-panel::before {
+    content: '';
+    display: inline-block;
+    width: 120px;
+    height: 32px;
+    background-image: url('../images/logo-branco.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0.5rem 1rem;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.jp-MenuBar {
+    margin-left: 140px !important; /* Espaço para o logo */
+}
+
+/* === MENU BAR === */
+.jp-MenuBar-menu {
+    background-color: transparent !important;
+    color: var(--cloudvbox-text-primary) !important;
+    transition: var(--cloudvbox-transition) !important;
+}
+
+.jp-MenuBar-menu:hover {
+    background-color: var(--cloudvbox-bg-tertiary) !important;
+    color: var(--cloudvbox-primary) !important;
+}
+
+.jp-Menu {
+    background-color: var(--cloudvbox-bg-card) !important;
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-radius: var(--cloudvbox-radius-lg) !important;
+    box-shadow: var(--cloudvbox-shadow-xl) !important;
+}
+
+.jp-Menu-item {
+    color: var(--cloudvbox-text-primary) !important;
+    transition: var(--cloudvbox-transition) !important;
+}
+
+.jp-Menu-item:hover {
+    background-color: var(--cloudvbox-bg-tertiary) !important;
+    color: var(--cloudvbox-primary) !important;
+}
+
+.jp-Menu-item.jp-mod-active {
+    background-color: var(--cloudvbox-primary) !important;
+    color: var(--cloudvbox-bg-primary) !important;
+}
+
+/* === SIDEBAR === */
+.jp-SideBar {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border-right: 1px solid var(--cloudvbox-border-primary) !important;
+}
+
+.jp-SideBar .jp-SideBar-header {
+    background-color: var(--cloudvbox-bg-tertiary) !important;
+    border-bottom: 1px solid var(--cloudvbox-border-primary) !important;
+}
+
+.jp-SideBar-tabIcon {
+    color: var(--cloudvbox-text-secondary) !important;
+    transition: var(--cloudvbox-transition) !important;
+}
+
+.jp-SideBar-tabIcon:hover,
+.jp-SideBar-tabIcon.jp-mod-current {
+    color: var(--cloudvbox-primary) !important;
+}
+
+/* === FILE BROWSER === */
+.jp-FileBrowser {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+}
+
+.jp-FileBrowser-listing {
+    background-color: transparent !important;
+}
+
+.jp-DirListing-item {
+    color: var(--cloudvbox-text-primary) !important;
+    transition: var(--cloudvbox-transition) !important;
+}
+
+.jp-DirListing-item:hover {
+    background-color: var(--cloudvbox-bg-tertiary) !important;
+}
+
+.jp-DirListing-item.jp-mod-selected {
+    background-color: rgba(85, 252, 255, 0.2) !important;
+    color: var(--cloudvbox-primary) !important;
+}
+
+/* === ABAS === */
+.jp-TabBar {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border-bottom: 1px solid var(--cloudvbox-border-primary) !important;
+}
+
+.jp-TabBar-tab {
+    background-color: var(--cloudvbox-bg-tertiary) !important;
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-bottom: none !important;
+    border-radius: var(--cloudvbox-radius-md) var(--cloudvbox-radius-md) 0 0 !important;
+    color: var(--cloudvbox-text-secondary) !important;
+    margin-right: 2px !important;
+    transition: var(--cloudvbox-transition) !important;
+}
+
+.jp-TabBar-tab:hover {
+    background-color: var(--cloudvbox-bg-card) !important;
+    color: var(--cloudvbox-text-primary) !important;
+}
+
+.jp-TabBar-tab.jp-mod-current {
+    background-color: var(--cloudvbox-bg-primary) !important;
+    border-color: var(--cloudvbox-primary) !important;
+    color: var(--cloudvbox-primary) !important;
+    box-shadow: 0 -2px 0 var(--cloudvbox-primary) !important;
+}
+
+/* === NOTEBOOK === */
+.jp-Notebook {
+    background-color: var(--cloudvbox-bg-primary) !important;
+    padding: 2rem !important;
+}
+
+.jp-Cell {
+    background-color: var(--cloudvbox-bg-card) !important;
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-radius: var(--cloudvbox-radius-lg) !important;
+    margin-bottom: 1rem !important;
+    transition: var(--cloudvbox-transition) !important;
+}
+
+.jp-Cell:hover {
+    border-color: var(--cloudvbox-border-accent) !important;
+    box-shadow: var(--cloudvbox-shadow-md) !important;
+}
+
+.jp-Cell.jp-mod-selected {
+    border-color: var(--cloudvbox-primary) !important;
+    box-shadow: 0 0 0 2px rgba(85, 252, 255, 0.2) !important;
+}
+
+.jp-Cell.jp-mod-active {
+    border-color: var(--cloudvbox-primary) !important;
+    box-shadow: 0 0 0 3px rgba(85, 252, 255, 0.3) !important;
+}
+
+/* === CÉLULAS DE CÓDIGO === */
+.jp-CodeCell {
+    background-color: var(--cloudvbox-bg-card) !important;
+}
+
+.jp-InputArea {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border-radius: var(--cloudvbox-radius-md) !important;
+}
+
+.jp-InputArea-editor {
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-radius: var(--cloudvbox-radius-md) !important;
+}
+
+.jp-InputPrompt {
+    color: var(--cloudvbox-primary) !important;
+    font-weight: 600 !important;
+    font-family: var(--jp-code-font-family) !important;
+}
+
+/* === CÉLULAS DE MARKDOWN === */
+.jp-MarkdownCell {
+    background-color: var(--cloudvbox-bg-card) !important;
+}
+
+.jp-MarkdownOutput {
+    color: var(--cloudvbox-text-primary) !important;
+    padding: 1rem !important;
+}
+
+.jp-MarkdownOutput h1,
+.jp-MarkdownOutput h2,
+.jp-MarkdownOutput h3,
+.jp-MarkdownOutput h4,
+.jp-MarkdownOutput h5,
+.jp-MarkdownOutput h6 {
+    color: var(--cloudvbox-primary) !important;
+    font-weight: 600 !important;
+}
+
+.jp-MarkdownOutput h1 {
+    border-bottom: 2px solid var(--cloudvbox-primary) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.jp-MarkdownOutput a {
+    color: var(--cloudvbox-primary) !important;
+    text-decoration: none !important;
+}
+
+.jp-MarkdownOutput a:hover {
+    text-decoration: underline !important;
+    color: rgba(85, 252, 255, 0.8) !important;
+}
+
+.jp-MarkdownOutput code {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    color: var(--cloudvbox-primary) !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: var(--cloudvbox-radius-sm) !important;
+}
+
+.jp-MarkdownOutput pre {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-radius: var(--cloudvbox-radius-md) !important;
+    padding: 1rem !important;
+}
+
+.jp-MarkdownOutput blockquote {
+    border-left: 4px solid var(--cloudvbox-primary) !important;
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+    border-radius: var(--cloudvbox-radius-md) !important;
+}
+
+/* === ÁREA DE SAÍDA === */
+.jp-OutputArea {
+    background-color: var(--cloudvbox-bg-primary) !important;
+    border-radius: var(--cloudvbox-radius-md) !important;
+}
+
+.jp-OutputArea-output {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-radius: var(--cloudvbox-radius-md) !important;
+    padding: 1rem !important;
+}
+
+.jp-OutputPrompt {
+    color: var(--cloudvbox-primary) !important;
+    font-weight: 600 !important;
+    font-family: var(--jp-code-font-family) !important;
+}
+
+/* === TOOLBAR === */
+.jp-Toolbar {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border-bottom: 1px solid var(--cloudvbox-border-primary) !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.jp-ToolbarButton {
+    background-color: var(--cloudvbox-bg-tertiary) !important;
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-radius: var(--cloudvbox-radius-md) !important;
+    color: var(--cloudvbox-text-primary) !important;
+    transition: var(--cloudvbox-transition) !important;
+    margin-right: 0.25rem !important;
+}
+
+.jp-ToolbarButton:hover {
+    background-color: var(--cloudvbox-bg-card) !important;
+    border-color: var(--cloudvbox-primary) !important;
+    color: var(--cloudvbox-primary) !important;
+}
+
+.jp-ToolbarButton.jp-mod-active {
+    background-color: var(--cloudvbox-primary) !important;
+    border-color: var(--cloudvbox-primary) !important;
+    color: var(--cloudvbox-bg-primary) !important;
+}
+
+/* === TERMINAL === */
+.jp-Terminal {
+    background-color: var(--cloudvbox-bg-primary) !important;
+    color: var(--cloudvbox-text-primary) !important;
+    font-family: var(--jp-code-font-family) !important;
+}
+
+.xterm-viewport {
+    background-color: var(--cloudvbox-bg-primary) !important;
+}
+
+.xterm-screen {
+    background-color: var(--cloudvbox-bg-primary) !important;
+}
+
+/* === MODAIS E DIÁLOGOS === */
+.jp-Dialog {
+    background-color: var(--cloudvbox-bg-card) !important;
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-radius: var(--cloudvbox-radius-xl) !important;
+    box-shadow: var(--cloudvbox-shadow-xl) !important;
+}
+
+.jp-Dialog-header {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border-bottom: 1px solid var(--cloudvbox-border-primary) !important;
+    color: var(--cloudvbox-text-primary) !important;
+}
+
+.jp-Dialog-body {
+    color: var(--cloudvbox-text-primary) !important;
+}
+
+.jp-Dialog-footer {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border-top: 1px solid var(--cloudvbox-border-primary) !important;
+}
+
+/* === BOTÕES === */
+.jp-Button {
+    background-color: var(--cloudvbox-bg-tertiary) !important;
+    border: 1px solid var(--cloudvbox-border-primary) !important;
+    border-radius: var(--cloudvbox-radius-md) !important;
+    color: var(--cloudvbox-text-primary) !important;
+    transition: var(--cloudvbox-transition) !important;
+}
+
+.jp-Button:hover {
+    background-color: var(--cloudvbox-bg-card) !important;
+    border-color: var(--cloudvbox-primary) !important;
+    color: var(--cloudvbox-primary) !important;
+}
+
+.jp-Button.jp-mod-accept {
+    background-color: var(--cloudvbox-button-primary) !important;
+    border-color: var(--cloudvbox-button-primary) !important;
+    color: var(--cloudvbox-text-primary) !important;
+}
+
+.jp-Button.jp-mod-accept:hover {
+    background-color: var(--cloudvbox-button-primary-hover) !important;
+    border-color: var(--cloudvbox-button-primary-hover) !important;
+}
+
+.jp-Button.jp-mod-warn {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: var(--cloudvbox-text-primary) !important;
+}
+
+.jp-Button.jp-mod-reject {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: var(--cloudvbox-text-primary) !important;
+}
+
+/* === STATUS BAR === */
+.jp-StatusBar {
+    background-color: var(--cloudvbox-bg-secondary) !important;
+    border-top: 1px solid var(--cloudvbox-border-primary) !important;
+    color: var(--cloudvbox-text-secondary) !important;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    .jp-Notebook {
+        padding: 1rem !important;
+    }
+    
+    .jp-Cell {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    #jp-top-panel::before {
+        width: 80px !important;
+        height: 24px !important;
+    }
+    
+    .jp-MenuBar {
+        margin-left: 100px !important;
+    }
+}
+
+/* === ANIMAÇÕES === */
+@keyframes cloudvbox-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.jp-Cell.jp-mod-active {
+    animation: cloudvbox-pulse 2s ease-in-out infinite !important;
+}
+

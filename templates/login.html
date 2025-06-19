@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>cloudvBOX Login</title>
+    <link rel="stylesheet" href="{{ static_url('css/login.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ static_url('images/favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="login-container" aria-label="Acesso ao cloudvBOX">
+        <img src="{{ static_url('images/logo.png') }}" alt="Logo cloudvBOX" class="logo" width="120" height="120" loading="lazy">
+        <h2 tabindex="1">Bem-vindo ao cloudvBOX</h2>
+        <form method="post" id="login_form" autocomplete="off" aria-label="Formulário de login">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" autofocus required autocomplete="username">
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="login-btn">Entrar</button>
+        </form>
+        <div class="login-footer" aria-live="polite">
+            <span id="login-message"></span>
+        </div>
+    </main>
+    <script src="{{ static_url('js/login.js') }}"></script>
+</body>
+</html>
