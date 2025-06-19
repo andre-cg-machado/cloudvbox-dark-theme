@@ -1,9 +1,9 @@
 # cloudvBOX Dark Theme
 
 <div align="center">
-  <img src="https://cloudvbox.com/wp-content/uploads/2024/08/logo-branco-2.png" alt="cloudvBOX Logo" width="200"/>
+  <img src="https://cloudvbox.com/wp-content/uploads/2024/08/logo-preto.png" alt="cloudvBOX Logo" width="200"/>
   
-  **Tema profissional escuro para Jupyter Notebook e JupyterLab**
+  **cloudvBOX Dark Theme for JupyterLab**
   
   [![PyPI version](https://badge.fury.io/py/cloudvbox-dark-theme.svg)](https://badge.fury.io/py/cloudvbox-dark-theme)
   [![Python Support](https://img.shields.io/pypi/pyversions/cloudvbox-dark-theme.svg)](https://pypi.org/project/cloudvbox-dark-theme/)
