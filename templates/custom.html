@@ -6,10 +6,10 @@
     <title>{% block title %}cloudvBOX Jupyter Notebook{% endblock %}</title>
     
     <!-- cloudvBOX Dark Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/custom.css') }}">
     
     <!-- Favicon cloudvBOX -->
-    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="icon" type="image/x-icon" href="{{ static_url('images/favicon.ico') }}">
     
     <!-- Meta tags para SEO -->
     <meta name="description" content="Jupyter Notebook com tema cloudvBOX Dark - Ambiente profissional para ciência de dados">
@@ -19,7 +19,7 @@
     <!-- Open Graph para compartilhamento -->
     <meta property="og:title" content="cloudvBOX Jupyter Notebook">
     <meta property="og:description" content="Ambiente profissional para ciência de dados com tema escuro cloudvBOX">
-    <meta property="og:image" content="/images/logo-branco.png">
+    <meta property="og:image" content="{{ static_url('images/logo-branco.png') }}">
     <meta property="og:type" content="website">
     
     <!-- Estilos customizados inline -->
@@ -92,7 +92,7 @@
 <body class="{% block body_class %}{% endblock %}">
     <!-- Loading screen cloudvBOX -->
     <div class="cloudvbox-loading" id="cloudvbox-loading">
-        <img src="/images/logo-branco.png" alt="cloudvBOX" />
+        <img src="{{ static_url('images/logo-branco.png') }}" alt="cloudvBOX" />
         <div class="cloudvbox-loading-text">Carregando cloudvBOX Notebook...</div>
         <div class="cloudvbox-loading-spinner"></div>
     </div>
@@ -139,9 +139,8 @@
     </script>
     
     <!-- JavaScript customizado do tema -->
-    <script src="/custom/custom.js"></script>
+    <script src="{{ static_url('custom/custom.js') }}"></script>
     
     {% block extra_script %}{% endblock %}
 </body>
 </html>
-
